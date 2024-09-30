@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --primary-color: #3949AB;
+    --secondary-color: #00BCD4;
+    --background-color: #E8EAF6;
+    --text-color: #212121;
+    --highlight-color: #FFC107;
+    --error-color: #F44336;
+    --success-color: #4CAF50;
+    --neutral-color: #90A4AE;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+}
+
+h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+p {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+#language-selection, #start, #quiz, #result {
+    transition: opacity 0.3s ease;
+}
+
+#language-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn {
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #303F9F;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(63, 81, 181, 0.3);
+}
+
+.btn:disabled {
+    background-color: var(--neutral-color);
+    cursor: not-allowed;
+}
+
+.language-btn {
+    background-color: var(--primary-color);
+}
+
+.language-btn:hover {
+    background-color: #0097A7;
+}
+
+#progress-container {
+    margin-bottom: 30px;
+}
+
+#progress-bar {
+    height: 10px;
+    background-color: var(--neutral-color);
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+#progress-bar::before {
+    content: '';
+    display: block;
+    height: 100%;
+    background-color: var(--secondary-color);
+    width: 0;
+    transition: width 0.3s ease;
+}
+
+#progress-text {
+    font-size: 0.9rem;
+    color: var(--neutral-color);
+}
+
+#question {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+}
+
+#choices {
+    display: grid;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.choice {
+    background-color: #F5F5F5;
+    border: 2px solid var(--neutral-color);
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.choice:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: #FFFFFF;
+}
+
+.choice.selected {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #FFFFFF;
+}
+
+#wrong-answers-list {
+    text-align: left;
+    list-style-type: none;
+    padding: 0;
+}
+
+#wrong-answers-list li {
+    background-color: #FFF3E0;
+    border-left: 4px solid var(--error-color);
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+#wrong-answers-list p {
+    margin-bottom: 5px;
+}
+
+footer {
+    margin-top: 50px;
+    text-align: center;
+    color: var(--neutral-color);
+    font-size: 0.9rem;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    #language-buttons {
+        flex-direction: column;
+    }
+
+    .language-btn {
+        width: 100%;
+    }
+
+    .choice {
+        padding: 10px;
+    }
+}

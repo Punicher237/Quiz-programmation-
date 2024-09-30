@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OneillusCoding - Quiz Interactif de Programmation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="language-selection">
+            <h1>Quiz Interactif de Programmation</h1>
+            <p>Choisissez un langage pour commencer le quiz :</p>
+            <div id="language-buttons">
+                <button class="btn language-btn" data-language="python">Python</button>
+                <button class="btn language-btn" data-language="javascript">JavaScript</button>
+                <button class="btn language-btn" data-language="c">C</button>
+                <button class="btn language-btn" data-language="java">Java</button>
+            </div>
+        </div>
+
+        <div id="start" class="hidden">
+            <h1>Quiz <span id="selected-language">Python</span></h1>
+            <p>Testez vos connaissances en <span id="selected-language-2">Python</span> avec ce quiz interactif !</p>
+            <button id="start-button" class="btn">Commencer le Quiz</button>
+        </div>
+
+        <div id="quiz" class="hidden">
+            <div id="progress-container">
+                <div id="progress-bar"></div>
+                <p id="progress-text">Question 1 sur 5</p>
+            </div>
+            <h2 id="question"></h2>
+            <div id="choices"></div>
+            <button id="submit" class="btn" disabled>Valider</button>
+        </div>
+
+        <div id="result" class="hidden">
+            <h2>Résultat Final</h2>
+            <p>Score : <span id="score"></span></p>
+            <p id="feedback"></p>
+            <h3>Réponses incorrectes :</h3>
+            <ul id="wrong-answers-list"></ul>
+            <button id="restart-button" class="btn">Recommencer</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 OneillusCoding. Tous droits réservés.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
